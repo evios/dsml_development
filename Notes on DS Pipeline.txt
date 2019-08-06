@@ -1,0 +1,61 @@
+libraries import
+
+
+
+data load
+	shuf (unix cli command to read few samples, but not entire file) - FastAI Lection #3
+		evaluate types within small dataset
+		types = {'id':'int' 64, item_nbr=int32, ...}
+	read_csv(dtypes=types)
+
+
+
+??VectorAssembler (X_features separation from y)
+	https://www.youtube.com/watch?v=oDTJxEl95Go&t=1120
+
+
+correlation
+	plot
+
+clean
+	Outliers
+
+DF concatenation (train+test)
+	Y creation
+		Drop Y from train
+	remember where to divide before modeling
+
+clean
+	drop
+	fillna
+	impute
+
+
+categorical to numberical
+
+normalize
+	StandardScaler
+
+split train-test
+	Ensambling/Bagging
+
+model selection
+	select small subset from whole subset to speed up
+	fit
+		%time - count time for command
+			#prun - wich line of code behind the scene takes how much time 
+				make recurring commands outside of fit ((Profiling)), eg DF to float32
+
+
+evaluate
+???	evaluator - BinaryClassificationEvaluator
+	oob score
+	evaluate how good is yours validation set (part of train data)
+		try to submit few times (4-5) and compare (plot) correlation between your predicted scores and Kaggle actual scores
+			Correlation should be linear without ouliers! 
+			if no - change validational dataset
+			If data - chose latest for validation (not randomly chosen data points)
+
+
+predict
+	with full training set
